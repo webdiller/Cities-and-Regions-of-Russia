@@ -59,6 +59,51 @@ The `cities_regions.json` file contains a list of objects with the following str
 ]
 ```
 
+### Field Descriptions
+
+| Field | Type | Description |
+|-------|------|-------------|
+| **`data`** | `array` | A list of region objects. |
+| **Region object** | | |
+| `region` | `string` | Name of the federal subject (region, republic, krai, etc.). |
+| `regionUrl` | `string` | URL to the Wikipedia page of the region. |
+| `cities` | `array` | List of city objects belonging to this region. |
+| **City object** | | |
+| `number` | `string` | Ordinal number of the city in the list (e.g., "1"). |
+| `coatOfArms` | `string` | URL to a thumbnail (40px) of the city's coat of arms. |
+| `cityName` | `string` | Name of the city. |
+| `cityUrl` | `string` | URL to the Wikipedia page of the city. |
+| `gfz` | `string` | Federal subject (same as region, often used for classification). |
+| `regionUrl` | `string` | (Duplicate) URL to the region's Wikipedia page. |
+| `federalDistrict` | `string` | Federal district of Russia (e.g., "Сибирский"). |
+| `population` | `number` | Population of the city (source: Wikipedia). |
+| `foundation` | `string` | Year (or date) the city was founded. |
+| `cityStatus` | `string` | Year when the settlement was granted city status. |
+| `formerNames` | `string` | Previous names of the city (comma‑separated). |
+| `cityInfo` | `object` | Additional detailed information about the city. |
+| **CityInfo object** | | |
+| `cityUrl` | `string` | (Duplicate) URL to city's Wikipedia page. |
+| `regionUrl` | `string` | (Duplicate) URL to region's Wikipedia page. |
+| `cityName` | `string` | (Duplicate) City name. |
+| `region` | `string` | (Duplicate) Region name. |
+| `phoneCode` | `string` | Telephone dialing code (with `+`). |
+| `postalCode` | `string` | Postal code. |
+| `okato` | `string` | OKATO code (Russian administrative classification). |
+| `density` | `number` | Population density (people per km²). |
+| `population` | `number` | (Duplicate) Population value (may differ slightly from the main field). |
+| `timeZone` | `string` | Time zone (e.g., `UTC+7:00`). |
+| `coordinates` | `object` | Geographic coordinates. |
+| `coordinates.lat` | `number` | Latitude (decimal). |
+| `coordinates.lon` | `number` | Longitude (decimal). |
+| `flagImage` | `string` | URL to the city's flag image (250px). |
+| `coatOfArmsImage` | `string` | URL to the city's coat of arms image (120px). |
+| `gallery` | `array` | Array of image objects for the city gallery. |
+| `gallery[].src` | `string` | URL to the gallery image. |
+| `gallery[].alt` | `string` | Alt text for the image (may be empty). |
+| `galleryCaption` | `string` | Caption for the gallery (often empty). |
+
+> **Note:** Some fields are duplicated (e.g., `population`, `regionUrl`) – they come directly from the parsed Wikipedia infobox and may contain slightly different values.
+
 # Города и регионы России
 #### Russian / Русский
 Данные о городах и регионах России, полученные из открытых источников, в первую очередь — из [Википедии](https://ru.wikipedia.org/). Данные представлены в формате JSON для удобства использования в различных проектах.
@@ -119,3 +164,47 @@ The `cities_regions.json` file contains a list of objects with the following str
     ...
 ]
 ```
+### Описание полей
+
+| Поле | Тип | Описание |
+|------|-----|----------|
+| **`data`** | `массив` | Список объектов регионов. |
+| **Объект региона** | | |
+| `region` | `строка` | Название субъекта федерации (республика, край, область и т.д.). |
+| `regionUrl` | `строка` | Ссылка на страницу региона в Википедии. |
+| `cities` | `массив` | Список объектов городов, принадлежащих этому региону. |
+| **Объект города** | | |
+| `number` | `строка` | Порядковый номер города в списке (например, «1»). |
+| `coatOfArms` | `строка` | Ссылка на миниатюру (40px) герба города. |
+| `cityName` | `строка` | Название города. |
+| `cityUrl` | `строка` | Ссылка на страницу города в Википедии. |
+| `gfz` | `строка` | Субъект федерации (обычно совпадает с `region`, используется для классификации). |
+| `regionUrl` | `строка` | (Дубликат) Ссылка на страницу региона. |
+| `federalDistrict` | `строка` | Федеральный округ России (например, «Сибирский»). |
+| `population` | `число` | Население города (по данным Википедии). |
+| `foundation` | `строка` | Год (или дата) основания города. |
+| `cityStatus` | `строка` | Год получения статуса города. |
+| `formerNames` | `строка` | Прежние названия города (через запятую). |
+| `cityInfo` | `объект` | Дополнительная подробная информация о городе. |
+| **Объект CityInfo** | | |
+| `cityUrl` | `строка` | (Дубликат) Ссылка на страницу города. |
+| `regionUrl` | `строка` | (Дубликат) Ссылка на страницу региона. |
+| `cityName` | `строка` | (Дубликат) Название города. |
+| `region` | `строка` | (Дубликат) Название региона. |
+| `phoneCode` | `строка` | Телефонный код (с «+»). |
+| `postalCode` | `строка` | Почтовый индекс. |
+| `okato` | `строка` | Код ОКАТО (общероссийский классификатор). |
+| `density` | `число` | Плотность населения (чел./км²). |
+| `population` | `число` | (Дубликат) Значение населения (может незначительно отличаться от основного поля). |
+| `timeZone` | `строка` | Часовой пояс (например, `UTC+7:00`). |
+| `coordinates` | `объект` | Географические координаты. |
+| `coordinates.lat` | `число` | Широта (в десятичных градусах). |
+| `coordinates.lon` | `число` | Долгота (в десятичных градусах). |
+| `flagImage` | `строка` | Ссылка на изображение флага города (250px). |
+| `coatOfArmsImage` | `строка` | Ссылка на изображение герба города (120px). |
+| `gallery` | `массив` | Массив объектов изображений для галереи города. |
+| `gallery[].src` | `строка` | Ссылка на изображение в галерее. |
+| `gallery[].alt` | `строка` | Альтернативный текст для изображения (может быть пустым). |
+| `galleryCaption` | `строка` | Подпись для галереи (часто пустая). |
+
+> **Примечание:** Некоторые поля дублируются (например, `population`, `regionUrl`) – они взяты непосредственно из парсинга инфобокса Википедии и могут содержать немного разные значения.
