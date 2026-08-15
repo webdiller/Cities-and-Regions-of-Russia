@@ -1,210 +1,230 @@
-# Cities and Regions of Russia
-#### English / Английский
-A dataset of cities and regions of Russia, sourced from open data, primarily [Wikipedia](https://en.wikipedia.org/). The data is provided in JSON format for easy integration into various projects.
+# Города и регионы России 2026 года
 
-## Data Source
-- **Wikipedia**: [List of cities and towns in Russia](https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Russia_by_population)
-- **Data License**: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+Датасет городов и регионов России в формате JSON. Основные источники — [Википедия](https://ru.wikipedia.org/) и данные Яндекс.Карт.
 
-## Data Structure
-The `cities_regions.json` file contains a list of objects with the following structure (example):
+## Источники
+
+- Википедия: [Список городов России](https://ru.wikipedia.org/wiki/Список_городов_России)
+- Яндекс.Карты: идентификаторы, slug, координаты, число организаций
+
+## Структура JSON
+
+Корневой элемент — массив регионов. У региона есть список `cities`, инфобокс `regionInfo` и блок `yandexDetails`. У города — табличные поля, `cityInfo` и `yandexDetails`.
+
 ```json
-"data": [
-    {
-      "region": "Хакасия",
-      "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-      "cities": [
-        {
-          "number": "1",
-          "coatOfArms": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Coat_of_Arms_of_Abaza_%28Khakassia%29.png/40px-Coat_of_Arms_of_Abaza_%28Khakassia%29.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-          "cityName": "Абаза",
-          "cityUrl": "https://ru.wikipedia.org/wiki/Абаза_(город)",
-          "gfz": "Хакасия",
-          "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-          "federalDistrict": "Сибирский",
-          "population": 12272,
-          "foundation": "1867",
-          "cityStatus": "1966",
-          "formerNames": "Абаканский Завод, Абаканско-Заводское",
-          "cityInfo": {
-            "cityUrl": "https://ru.wikipedia.org/wiki/Абаза_(город)",
-            "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-            "cityName": "Абаза",
-            "region": "Хакасия",
-            "phoneCode": "+739047",
-            "postalCode": "655750",
-            "okato": "95402000000",
-            "density": 150.57,
-            "population": 11823,
-            "timeZone": "UTC+7:00",
-            "coordinates": {
-              "lat": 52.65,
-              "lon": 90.083333333333
-            },
-            "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_Abaza.png/250px-Flag_of_Abaza.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-            "coatOfArmsImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Coat_of_Arms_of_Abaza_%28Khakassia%29.png/120px-Coat_of_Arms_of_Abaza_%28Khakassia%29.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-            "gallery": [
-              {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%90%D0%B1%D0%B0%D0%B7%D0%B0.jpg/330px-%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%90%D0%B1%D0%B0%D0%B7%D0%B0.jpg?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-                "alt": ""
-              }
-            ],
-            "galleryCaption": ""
-          }
+[
+  {
+    "region": "Адыгея",
+    "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
+    "id": 1,
+    "slug": "adygeya",
+    "cities": [
+      {
+        "id": 1,
+        "slug": "1-adygeysk",
+        "number": "7",
+        "cityName": "Адыгейск",
+        "cityUrl": "https://ru.wikipedia.org/wiki/Адыгейск",
+        "gfz": "Адыгея",
+        "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
+        "federalDistrict": "Южный",
+        "population": 13175,
+        "foundation": "1969",
+        "cityStatus": "1976",
+        "formerNames": "Адыгейский (до 1976);Теучежск (до 1990)",
+        "coatOfArms": "https://upload.wikimedia.org/.../Coat_of_arms_of_Adygeysk.png",
+        "cityInfo": {
+          "cityName": "Адыгейск",
+          "okato": "79403000000",
+          "phoneCode": "+787772",
+          "postalCode": "385 200",
+          "density": 1053.86,
+          "population": 13247,
+          "timeZone": "UTC+3:00",
+          "coordinates": { "lat": 44.884525, "lon": 39.19202 },
+          "flagImage": "...",
+          "coatOfArmsImage": "...",
+          "gallery": [{ "alt": "...", "src": "..." }],
+          "galleryCaption": "..."
+        },
+        "yandexDetails": {
+          "yandexId": "11005",
+          "yandexSlug": "adygeysk",
+          "yandexCityName": "Адыгейск",
+          "yandexLatitude": 44.884856,
+          "yandexLongitude": 39.190567,
+          "updatedAt": "2026-08-10T12:02:51.564Z"
         }
-        ...
-      ]
+      }
+    ],
+    "regionInfo": {
+      "regionName": "Республика Адыгея",
+      "okato": "79",
+      "phoneCode": "+7877",
+      "density": 64.26,
+      "population": 500731,
+      "timeZone": "MSK (UTC+3)",
+      "coordinates": { "lat": 44.65, "lon": 40 },
+      "flagImage": "...",
+      "coatOfArmsImage": "...",
+      "gallery": [{ "alt": "", "src": "..." }],
+      "galleryCaption": ""
+    },
+    "yandexDetails": {
+      "yandexId": "11004",
+      "yandexSlug": "republic-of-adygea",
+      "yandexRegionName": "Республика Адыгея",
+      "yandexLatitude": 44.884856,
+      "yandexLongitude": 39.190567,
+      "updatedAt": "2026-08-10T12:02:51.564Z"
     }
-    ...
+  }
 ]
 ```
 
-### Field Descriptions
-
-| Field | Type | Description |
-|-------|------|-------------|
-| **`data`** | `array` | A list of region objects. |
-| **Region object** | | |
-| `region` | `string` | Name of the federal subject (region, republic, krai, etc.). |
-| `regionUrl` | `string` | URL to the Wikipedia page of the region. |
-| `cities` | `array` | List of city objects belonging to this region. |
-| **City object** | | |
-| `number` | `string` | Ordinal number of the city in the list (e.g., "1"). |
-| `coatOfArms` | `string` | URL to a thumbnail (40px) of the city's coat of arms. |
-| `cityName` | `string` | Name of the city. |
-| `cityUrl` | `string` | URL to the Wikipedia page of the city. |
-| `gfz` | `string` | Federal subject (same as region, often used for classification). |
-| `regionUrl` | `string` | (Duplicate) URL to the region's Wikipedia page. |
-| `federalDistrict` | `string` | Federal district of Russia (e.g., "Сибирский"). |
-| `population` | `number` | Population of the city (source: Wikipedia). |
-| `foundation` | `string` | Year (or date) the city was founded. |
-| `cityStatus` | `string` | Year when the settlement was granted city status. |
-| `formerNames` | `string` | Previous names of the city (comma‑separated). |
-| `cityInfo` | `object` | Additional detailed information about the city. |
-| **CityInfo object** | | |
-| `cityUrl` | `string` | (Duplicate) URL to city's Wikipedia page. |
-| `regionUrl` | `string` | (Duplicate) URL to region's Wikipedia page. |
-| `cityName` | `string` | (Duplicate) City name. |
-| `region` | `string` | (Duplicate) Region name. |
-| `phoneCode` | `string` | Telephone dialing code (with `+`). |
-| `postalCode` | `string` | Postal code. |
-| `okato` | `string` | OKATO code (Russian administrative classification). |
-| `density` | `number` | Population density (people per km²). |
-| `population` | `number` | (Duplicate) Population value (may differ slightly from the main field). |
-| `timeZone` | `string` | Time zone (e.g., `UTC+7:00`). |
-| `coordinates` | `object` | Geographic coordinates. |
-| `coordinates.lat` | `number` | Latitude (decimal). |
-| `coordinates.lon` | `number` | Longitude (decimal). |
-| `flagImage` | `string` | URL to the city's flag image (250px). |
-| `coatOfArmsImage` | `string` | URL to the city's coat of arms image (120px). |
-| `gallery` | `array` | Array of image objects for the city gallery. |
-| `gallery[].src` | `string` | URL to the gallery image. |
-| `gallery[].alt` | `string` | Alt text for the image (may be empty). |
-| `galleryCaption` | `string` | Caption for the gallery (often empty). |
-
-> **Note:** Some fields are duplicated (e.g., `population`, `regionUrl`) – they come directly from the parsed Wikipedia infobox and may contain slightly different values.
-
-# Города и регионы России
-#### Russian / Русский
-Данные о городах и регионах России, полученные из открытых источников, в первую очередь — из [Википедии](https://ru.wikipedia.org/). Данные представлены в формате JSON для удобства использования в различных проектах.
-
-## Источник данных
-- **Википедия**: [Список городов России](https://ru.wikipedia.org/wiki/Список_городов_России)
-- **Лицензия данных**: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-
-## Структура данных
-Файл `cities_regions.json` содержит список объектов со следующей структурой (пример):
-```json
-"data": [
-    {
-      "region": "Хакасия",
-      "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-      "cities": [
-        {
-          "number": "1",
-          "coatOfArms": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Coat_of_Arms_of_Abaza_%28Khakassia%29.png/40px-Coat_of_Arms_of_Abaza_%28Khakassia%29.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-          "cityName": "Абаза",
-          "cityUrl": "https://ru.wikipedia.org/wiki/Абаза_(город)",
-          "gfz": "Хакасия",
-          "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-          "federalDistrict": "Сибирский",
-          "population": 12272,
-          "foundation": "1867",
-          "cityStatus": "1966",
-          "formerNames": "Абаканский Завод, Абаканско-Заводское",
-          "cityInfo": {
-            "cityUrl": "https://ru.wikipedia.org/wiki/Абаза_(город)",
-            "regionUrl": "https://ru.wikipedia.org/wiki/Хакасия",
-            "cityName": "Абаза",
-            "region": "Хакасия",
-            "phoneCode": "+739047",
-            "postalCode": "655750",
-            "okato": "95402000000",
-            "density": 150.57,
-            "population": 11823,
-            "timeZone": "UTC+7:00",
-            "coordinates": {
-              "lat": 52.65,
-              "lon": 90.083333333333
-            },
-            "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_Abaza.png/250px-Flag_of_Abaza.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-            "coatOfArmsImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Coat_of_Arms_of_Abaza_%28Khakassia%29.png/120px-Coat_of_Arms_of_Abaza_%28Khakassia%29.png?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-            "gallery": [
-              {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%90%D0%B1%D0%B0%D0%B7%D0%B0.jpg/330px-%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%90%D0%B1%D0%B0%D0%B7%D0%B0.jpg?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-                "alt": ""
-              }
-            ],
-            "galleryCaption": ""
-          }
-        }
-        ...
-      ]
-    }
-    ...
-]
-```
-### Описание полей
+### Поля региона
 
 | Поле | Тип | Описание |
 |------|-----|----------|
-| **`data`** | `массив` | Список объектов регионов. |
-| **Объект региона** | | |
-| `region` | `строка` | Название субъекта федерации (республика, край, область и т.д.). |
-| `regionUrl` | `строка` | Ссылка на страницу региона в Википедии. |
-| `cities` | `массив` | Список объектов городов, принадлежащих этому региону. |
-| **Объект города** | | |
-| `number` | `строка` | Порядковый номер города в списке (например, «1»). |
-| `coatOfArms` | `строка` | Ссылка на миниатюру (40px) герба города. |
-| `cityName` | `строка` | Название города. |
-| `cityUrl` | `строка` | Ссылка на страницу города в Википедии. |
-| `gfz` | `строка` | Субъект федерации (обычно совпадает с `region`, используется для классификации). |
-| `regionUrl` | `строка` | (Дубликат) Ссылка на страницу региона. |
-| `federalDistrict` | `строка` | Федеральный округ России (например, «Сибирский»). |
-| `population` | `число` | Население города (по данным Википедии). |
-| `foundation` | `строка` | Год (или дата) основания города. |
-| `cityStatus` | `строка` | Год получения статуса города. |
-| `formerNames` | `строка` | Прежние названия города (через запятую). |
-| `cityInfo` | `объект` | Дополнительная подробная информация о городе. |
-| **Объект CityInfo** | | |
-| `cityUrl` | `строка` | (Дубликат) Ссылка на страницу города. |
-| `regionUrl` | `строка` | (Дубликат) Ссылка на страницу региона. |
-| `cityName` | `строка` | (Дубликат) Название города. |
-| `region` | `строка` | (Дубликат) Название региона. |
-| `phoneCode` | `строка` | Телефонный код (с «+»). |
-| `postalCode` | `строка` | Почтовый индекс. |
-| `okato` | `строка` | Код ОКАТО (общероссийский классификатор). |
-| `density` | `число` | Плотность населения (чел./км²). |
-| `population` | `число` | (Дубликат) Значение населения (может незначительно отличаться от основного поля). |
-| `timeZone` | `строка` | Часовой пояс (например, `UTC+7:00`). |
-| `coordinates` | `объект` | Географические координаты. |
-| `coordinates.lat` | `число` | Широта (в десятичных градусах). |
-| `coordinates.lon` | `число` | Долгота (в десятичных градусах). |
-| `flagImage` | `строка` | Ссылка на изображение флага города (250px). |
-| `coatOfArmsImage` | `строка` | Ссылка на изображение герба города (120px). |
-| `gallery` | `массив` | Массив объектов изображений для галереи города. |
-| `gallery[].src` | `строка` | Ссылка на изображение в галерее. |
-| `gallery[].alt` | `строка` | Альтернативный текст для изображения (может быть пустым). |
-| `galleryCaption` | `строка` | Подпись для галереи (часто пустая). |
+| `region` | string | Название субъекта РФ |
+| `regionUrl` | string | Страница региона в Википедии |
+| `id` | number | Внутренний ID региона |
+| `slug` | string | URL-slug региона |
+| `cities` | array | Список городов региона |
+| `regionInfo` | object | Инфобокс региона из Википедии |
+| `yandexDetails` | object | Данные региона с Яндекс.Карт |
 
-> **Примечание:** Некоторые поля дублируются (например, `population`, `regionUrl`) – они взяты непосредственно из парсинга инфобокса Википедии и могут содержать немного разные значения.
+### Поля города (таблица списка)
+
+| Поле | Тип | Описание |
+|------|-----|----------|
+| `id` | number | Внутренний ID города |
+| `slug` | string | URL-slug города |
+| `number` | string | Порядковый номер в списке Википедии |
+| `cityName` | string | Название города |
+| `cityUrl` | string | Страница города в Википедии |
+| `coatOfArms` | string \| null | Миниатюра герба (из таблицы) |
+| `gfz` | string | Субъект РФ (как в таблице) |
+| `regionUrl` | string | Страница региона в Википедии |
+| `federalDistrict` | string | Федеральный округ |
+| `population` | number \| null | Население (из таблицы) |
+| `foundation` | string \| null | Год основания / первого упоминания |
+| `cityStatus` | string \| null | Год получения статуса города |
+| `formerNames` | string \| null | Прежние названия |
+| `cityInfo` | object \| null | Инфобокс города из Википедии |
+| `yandexDetails` | object \| null | Данные города с Яндекс.Карт |
+
+### `cityInfo` / `regionInfo`
+
+| Поле | Тип | Описание |
+|------|-----|----------|
+| `cityName` / `regionName` | string | Официальное название из инфобокса |
+| `region` | string | Название региона |
+| `cityUrl` / `regionUrl` | string | Ссылка на Википедию |
+| `okato` | string | Код ОКАТО |
+| `phoneCode` | string | Телефонный код |
+| `postalCode` | string | Почтовый индекс |
+| `density` | number \| null | Плотность населения |
+| `population` | number \| null | Население из инфобокса |
+| `timeZone` | string | Часовой пояс |
+| `coordinates.lat` | number | Широта (Википедия) |
+| `coordinates.lon` | number | Долгота (Википедия) |
+| `flagImage` | string \| null | URL флага |
+| `coatOfArmsImage` | string \| null | URL герба |
+| `gallery` | array | Галерея `{ alt, src }` |
+| `galleryCaption` | string | Подпись к галерее |
+
+### `yandexDetails`
+
+| Поле | Тип | Описание |
+|------|-----|----------|
+| `yandexId` | string | ID сущности на Яндекс.Картах |
+| `yandexSlug` | string | Slug в URL карт |
+| `yandexCityName` / `yandexRegionName` | string | Название с карточки Яндекс |
+| `yandexLatitude` | number | Широта (Яндекс) |
+| `yandexLongitude` | number | Долгота (Яндекс) |
+| `updatedAt` | string | Время обновления (ISO) |
+
+> Координаты и население в таблице, `cityInfo`/`regionInfo` и `yandexDetails` могут отличаться — это разные источники.
+
+---
+
+# Cities and Regions of Russia 2026 year
+
+A JSON dataset of Russian cities and regions. Primary sources are [Wikipedia](https://en.wikipedia.org/) and Yandex Maps.
+
+## Sources
+
+- Wikipedia: [List of cities and towns in Russia](https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Russia)
+- Yandex Maps: IDs, slugs, coordinates
+
+## JSON structure
+
+The root value is an array of regions. Each region has a `cities` list, a Wikipedia `regionInfo` object, and a `yandexDetails` block. Each city has table fields, `cityInfo`, and `yandexDetails`.
+
+See the example in the Russian section above.
+
+### Region fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `region` | string | Federal subject name |
+| `regionUrl` | string | Wikipedia page URL for the region |
+| `id` | number | Internal region ID |
+| `slug` | string | Region URL slug |
+| `cities` | array | Cities in this region |
+| `regionInfo` | object | Wikipedia infobox for the region |
+| `yandexDetails` | object | Yandex Maps data for the region |
+
+### City fields (list table)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | number | Internal city ID |
+| `slug` | string | City URL slug |
+| `number` | string | Ordinal number in the Wikipedia list |
+| `cityName` | string | City name |
+| `cityUrl` | string | Wikipedia page URL for the city |
+| `coatOfArms` | string \| null | Coat of arms thumbnail (from the table) |
+| `gfz` | string | Federal subject (as in the table) |
+| `regionUrl` | string | Wikipedia page URL for the region |
+| `federalDistrict` | string | Federal district |
+| `population` | number \| null | Population (from the table) |
+| `foundation` | string \| null | Foundation / first mention year |
+| `cityStatus` | string \| null | Year city status was granted |
+| `formerNames` | string \| null | Previous names |
+| `cityInfo` | object \| null | Wikipedia infobox for the city |
+| `yandexDetails` | object \| null | Yandex Maps data for the city |
+
+### `cityInfo` / `regionInfo`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `cityName` / `regionName` | string | Official name from the infobox |
+| `region` | string | Region name |
+| `cityUrl` / `regionUrl` | string | Wikipedia URL |
+| `okato` | string | OKATO code |
+| `phoneCode` | string | Phone area code |
+| `postalCode` | string | Postal code |
+| `density` | number \| null | Population density |
+| `population` | number \| null | Population from the infobox |
+| `timeZone` | string | Time zone |
+| `coordinates.lat` | number | Latitude (Wikipedia) |
+| `coordinates.lon` | number | Longitude (Wikipedia) |
+| `flagImage` | string \| null | Flag image URL |
+| `coatOfArmsImage` | string \| null | Coat of arms image URL |
+| `gallery` | array | Gallery items `{ alt, src }` |
+| `galleryCaption` | string | Gallery caption |
+
+### `yandexDetails`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `yandexId` | string | Yandex Maps entity ID |
+| `yandexSlug` | string | Slug in Maps URLs |
+| `yandexCityName` / `yandexRegionName` | string | Name from the Yandex card |
+| `yandexLatitude` | number | Latitude (Yandex) |
+| `yandexLongitude` | number | Longitude (Yandex) |
+| `updatedAt` | string | Last update time (ISO) |
+
+> Values for coordinates and population may differ across the table, `cityInfo`/`regionInfo`, and `yandexDetails` because they come from different sources.
