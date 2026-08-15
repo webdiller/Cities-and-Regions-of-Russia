@@ -2,6 +2,8 @@
 
 Датасет городов и регионов России в формате JSON. Основные источники — [Википедия](https://ru.wikipedia.org/) и данные Яндекс.Карт.
 
+За дополнительными данными и услугами по сбору информации обращайтесь в Telegram: [https://t.me/webdillerru](https://t.me/webdillerru).
+
 ## Источники
 
 - Википедия: [Список городов России](https://ru.wikipedia.org/wiki/Список_городов_России)
@@ -12,74 +14,76 @@
 Корневой элемент — массив регионов. У региона есть список `cities`, инфобокс `regionInfo` и блок `yandexDetails`. У города — табличные поля, `cityInfo` и `yandexDetails`.
 
 ```json
-[
-  {
-    "region": "Адыгея",
-    "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
-    "id": 1,
-    "slug": "adygeya",
-    "cities": [
-      {
-        "id": 1,
-        "slug": "1-adygeysk",
-        "number": "7",
-        "cityName": "Адыгейск",
-        "cityUrl": "https://ru.wikipedia.org/wiki/Адыгейск",
-        "gfz": "Адыгея",
-        "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
-        "federalDistrict": "Южный",
-        "population": 13175,
-        "foundation": "1969",
-        "cityStatus": "1976",
-        "formerNames": "Адыгейский (до 1976);Теучежск (до 1990)",
-        "coatOfArms": "https://upload.wikimedia.org/.../Coat_of_arms_of_Adygeysk.png",
-        "cityInfo": {
+{
+  "data": [
+    {
+      "region": "Адыгея",
+      "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
+      "id": 1,
+      "slug": "adygeya",
+      "cities": [
+        {
+          "id": 1,
+          "slug": "1-adygeysk",
+          "number": "7",
           "cityName": "Адыгейск",
-          "okato": "79403000000",
-          "phoneCode": "+787772",
-          "postalCode": "385 200",
-          "density": 1053.86,
-          "population": 13247,
-          "timeZone": "UTC+3:00",
-          "coordinates": { "lat": 44.884525, "lon": 39.19202 },
-          "flagImage": "...",
-          "coatOfArmsImage": "...",
-          "gallery": [{ "alt": "...", "src": "..." }],
-          "galleryCaption": "..."
-        },
-        "yandexDetails": {
-          "yandexId": "11005",
-          "yandexSlug": "adygeysk",
-          "yandexCityName": "Адыгейск",
-          "yandexLatitude": 44.884856,
-          "yandexLongitude": 39.190567,
-          "updatedAt": "2026-08-10T12:02:51.564Z"
+          "cityUrl": "https://ru.wikipedia.org/wiki/Адыгейск",
+          "gfz": "Адыгея",
+          "regionUrl": "https://ru.wikipedia.org/wiki/Адыгея",
+          "federalDistrict": "Южный",
+          "population": 13175,
+          "foundation": "1969",
+          "cityStatus": "1976",
+          "formerNames": "Адыгейский (до 1976);Теучежск (до 1990)",
+          "coatOfArms": "https://upload.wikimedia.org/.../Coat_of_arms_of_Adygeysk.png",
+          "cityInfo": {
+            "cityName": "Адыгейск",
+            "okato": "79403000000",
+            "phoneCode": "+787772",
+            "postalCode": "385 200",
+            "density": 1053.86,
+            "population": 13247,
+            "timeZone": "UTC+3:00",
+            "coordinates": { "lat": 44.884525, "lon": 39.19202 },
+            "flagImage": "...",
+            "coatOfArmsImage": "...",
+            "gallery": [{ "alt": "...", "src": "..." }],
+            "galleryCaption": "..."
+          },
+          "yandexDetails": {
+            "yandexId": "11005",
+            "yandexSlug": "adygeysk",
+            "yandexCityName": "Адыгейск",
+            "yandexLatitude": 44.884856,
+            "yandexLongitude": 39.190567,
+            "updatedAt": "2026-08-10T12:02:51.564Z"
+          }
         }
+      ],
+      "regionInfo": {
+        "regionName": "Республика Адыгея",
+        "okato": "79",
+        "phoneCode": "+7877",
+        "density": 64.26,
+        "population": 500731,
+        "timeZone": "MSK (UTC+3)",
+        "coordinates": { "lat": 44.65, "lon": 40 },
+        "flagImage": "...",
+        "coatOfArmsImage": "...",
+        "gallery": [{ "alt": "", "src": "..." }],
+        "galleryCaption": ""
+      },
+      "yandexDetails": {
+        "yandexId": "11004",
+        "yandexSlug": "republic-of-adygea",
+        "yandexRegionName": "Республика Адыгея",
+        "yandexLatitude": 44.884856,
+        "yandexLongitude": 39.190567,
+        "updatedAt": "2026-08-10T12:02:51.564Z"
       }
-    ],
-    "regionInfo": {
-      "regionName": "Республика Адыгея",
-      "okato": "79",
-      "phoneCode": "+7877",
-      "density": 64.26,
-      "population": 500731,
-      "timeZone": "MSK (UTC+3)",
-      "coordinates": { "lat": 44.65, "lon": 40 },
-      "flagImage": "...",
-      "coatOfArmsImage": "...",
-      "gallery": [{ "alt": "", "src": "..." }],
-      "galleryCaption": ""
-    },
-    "yandexDetails": {
-      "yandexId": "11004",
-      "yandexSlug": "republic-of-adygea",
-      "yandexRegionName": "Республика Адыгея",
-      "yandexLatitude": 44.884856,
-      "yandexLongitude": 39.190567,
-      "updatedAt": "2026-08-10T12:02:51.564Z"
     }
-  }
-]
+  ]
+}
 ```
 
 ### Поля региона
@@ -152,6 +156,9 @@
 # Cities and Regions of Russia 2026 year
 
 A JSON dataset of Russian cities and regions. Primary sources are [Wikipedia](https://en.wikipedia.org/) and Yandex Maps.
+
+
+For additional data and information collection services, contact me on Telegram: [https://t.me/webdillerru](https://t.me/webdillerru).
 
 ## Sources
 
